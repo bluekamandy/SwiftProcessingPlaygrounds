@@ -1,1 +1,1 @@
-# SwiftProcessing-Playgrounds
+# SwiftProcessingPlaygrounds
