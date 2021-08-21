@@ -1,6 +1,6 @@
 //: [Previous](@previous)
 /*:
- # Rotate, Translate, and Scale
+ # Synthesis—Loops and Rotate
  ### by Masood Kamandy for GSoC 2021
  
  ### Introduction
@@ -9,11 +9,7 @@
  
  ### Push/Pop
  
- One important aspect of these functions is that they do not actually affect individual shapes, rather they operate on the entire coordinate system, so you'll need to also learn the `pushMatrix()` and `popMatrix()` functions to reset the coordinate system.
- 
- When you `pushMatrix()` you are saving the current state of the coordinate system (also called the *matrix*). You can then make any changes you'd like with any of the transformation functions. After you are done you can `popMatrix()` back to where you were before you made your changes.
- 
- An alternative pair of functions are `push()` and `pop()`. These are similar but they save much more than just the state of the coordinate system. For a full list all of the , use quick-help to see the reference.
+ One important aspect of these functions is that they do not actually affect individual shapes, rather they operate on the entire coordinate system, so you'll need to also learn the `push()` and `pop()` functions to reset the coordinate system.
  
  ### Order Matters
  
@@ -66,28 +62,23 @@ class MySketch: Sketch, SketchDelegate {
     var numLoops = 0
     
     func setup() {
-        background(0)
         stroke(255)
         noFill()
     }
     
     func draw() {
-        (background(0, 2.5),
-        rectMode(.center),
+        (background(0),
+         rectMode(.center),
+         translate(width/2, height/2),
+         rotate(rotation))
         
-        translate(width/2, height/2),
-        rotate(rotation),
-        rect(0, 0, 500, 500),
-  
-        // Each of the additional rotations builds up.
-        rotate(rotation),
-        rect(0,0, 300, 300),
-        
-        // So the smallest square is rotating 3 times faster than the largest square.
-        rotate(rotation),
-        rect(0,0, 100, 100),
 
-        rotation = rotation + increment)
+        for i in stride(from: 0, to: 975, by: 25) {
+            (rect(0, 0, 1000-i, 1000-i),
+             rotate(rotation))
+        }
+        
+        (rotation = rotation + increment)
     }
 }
 

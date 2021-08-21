@@ -93,8 +93,8 @@ default:
  The `control expression` is usually a variable that holds an integer, but it can be other types also.
  
  ## Let's use if statements and a switch to change the background depending on the dice roll! Hit play and tap the screen.
- 
  */
+
 import SwiftProcessing
 import PlaygroundSupport
 import UIKit

@@ -149,7 +149,7 @@ class MySketch: Sketch, SketchDelegate {
     }
     
     func draw() {
-        // In order to use them as arguments in the quad() funtion, we need to force unwrap them.
+        // In order to use them as arguments in the quad() funtion, we need to force unwrap them with !
         quad(corner1!.x, corner1!.y, corner2!.x, corner2!.y, corner3!.x, corner3!.y, corner4!.x, corner4!.y)
     }
 }

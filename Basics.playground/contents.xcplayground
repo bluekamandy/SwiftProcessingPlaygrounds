@@ -5,6 +5,7 @@
         <page name='Getting Started'/>
         <page name='Coordinates and Basic Shapes'/>
         <page name='Polygons and Curves'/>
+        <page name='Stroke Caps and Joins'/>
         <page name='Color and Stroke'/>
         <page name='Color Mode'/>
         <page name='Rotate, Translate, Scale'/>

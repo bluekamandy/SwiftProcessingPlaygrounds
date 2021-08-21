@@ -84,19 +84,19 @@ class MySketch: Sketch, SketchDelegate {
     }
     
     func draw() {
-        background(127)
-        noFill()
-        stroke(255)
+        (background(127),
+        noFill(),
+        stroke(255))
         
         // Display all circles using the array of sizes.
         for i in 0..<howManyCircles {
             let d_i = Double(i)
-            circle(d_i * spacer, height/2, circleSizes[i])
+            (circle(d_i * spacer, height/2, circleSizes[i]))
         }
         
         // Increment the sizes in the array by 1 until it gets to the maxSize and then repeat.
         for i in 0..<circleSizes.count {
-            circleSizes[i] = (circleSizes[i] + 1.0) % maxSize
+            (circleSizes[i] = (circleSizes[i] + 1.0) % maxSize)
         }
     }
 }

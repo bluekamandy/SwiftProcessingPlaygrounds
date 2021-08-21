@@ -4,8 +4,6 @@
  
  Welcome to SwiftProcessing and the world of creative coding. In the following tutorials you will learn the basics of learning to code creatively to produce artworks of your own.
  
- Before we get started, we'll need to use an import statement to bring SwiftProcessing's code into our playground. You'll see this on every playground in this series.
- 
  ## Code Comments
  
  One thing you might have noticed in the code above is that I wrote comments in the code above. The comments are invisible to the computer.
@@ -13,7 +11,8 @@
  In Swift, you can comment using a couple of methods: */
 //: 1. `//` - this is a single line comment.
 //: 1. `/* write comment here */` - this is a multi-line comment. Once you start your comment with `/*` the computer will ignore everything up until you close your comment with `*/`
-/*: ## What is a function?
+/*:
+## What is a function?
  
  Moving forward you'll definitely want to know what a ***function*** is, but luckily you've already used one!
  A function is a piece of code that does an action. You can think of them as the verbs of coding. We've used 3 functions in the code above.
@@ -49,6 +48,10 @@
      }
  }
  ```
+ 
+ ## Code Example
+ 
+ Before we get started, we'll need to use an import statement to bring SwiftProcessing's code into our playground. You'll see this on every playground in this series.
  
  ## Import Modules
  */

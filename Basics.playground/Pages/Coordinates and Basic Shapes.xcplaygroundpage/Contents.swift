@@ -25,7 +25,7 @@
  1. Ellipse - `ellipse(x, y, width, height)`
  1. Arc - `arc(x, y, width, height, start, stop)`
  
- ## Import Modules
+ ## Let's draw some shapes!
  */
 import SwiftProcessing
 import PlaygroundSupport
@@ -34,17 +34,17 @@ import UIKit
 class MySketch: Sketch, SketchDelegate {
     
     // We'll put everything in setup() so it only runs once.
+    
     func setup() {
-        //background(UIColor.systemBlue)
-        //background(0.0)
+
         background(0)
         noStroke()
-        // Try changing the numbers in the shapes
-        // to see how that affects the sketch.
+        
+        // Try changing the numbers in the shapes to see how that affects the sketch.
         
         // The 'width' and 'height' variables you see below are special SwiftProcessing variables that return the width and height of your device's screen. These can be replaced by numbers if you'd like.
         
-        fill(#colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1))
+        fill(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1))
         triangle(18, 18, 18, height, 81, height)
         
         fill(#colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1))
@@ -60,14 +60,15 @@ class MySketch: Sketch, SketchDelegate {
         triangle(288, 18, 351, height, 288, height)
         
         fill(#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1))
-        arc(479, 300, 280, 280, PI, TWO_PI)
+        arc(479, 300, 280, 280, Math.pi, Math.two_pi)
     }
     
     // We only use draw() when we need things to animate.
+    
     func draw() {
     }
 }
-//: This code is adapted from a [sketch on Processing.org](https://processing.org/examples/shapeprimitives.html).
+//: This code is adapted from a [sketch on Processing.org](https://processing.org/examples/shapeprimitives.html).\
 //: This last bit of code is to get things up and running in the playground.
 PlaygroundPage.current.setLiveView(MySketch())
 //: [Next](@next)

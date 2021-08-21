@@ -77,6 +77,7 @@ class MySketch: Sketch, SketchDelegate {
     let diameter = 25.0
 
     func setup() {
+        background(0)
     }
     
     // This time we're going to use the draw loop, which repeats itself at 60 frames per second by default. This allows us to do some animation!
@@ -90,6 +91,7 @@ class MySketch: Sketch, SketchDelegate {
         // Incrementing variables with a limit using % (Modulo).
         // It will increment up to the width/height and then go
         // back to zero.
+        
         xPos = (xPos + xSpeed) % width
         yPos = (yPos + ySpeed) % height
         

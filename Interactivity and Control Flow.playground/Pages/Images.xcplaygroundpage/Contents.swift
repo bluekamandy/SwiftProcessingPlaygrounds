@@ -55,7 +55,7 @@
  `get(x, y)`: returns the color at the specified x and y location.
  
  Below we put it in `touchStarted()`. Because `get()` returns a color, you can put it inside of the `background()` function:
-
+ 
  ```
  background(get(touchX, touchY))
  ```
@@ -73,12 +73,12 @@ class MySketch: Sketch, SketchDelegate {
     
     func setup() {
         pluto = loadImage("pluto.jpg")
-        imageMode("center") // Draws images from their center point.
-        background(255, 0, 0)
+        imageMode(.center) // Draws images from their center point.
+        background(50, 0, 125)
     }
     
     func draw() {
-        image(pluto, center.x, center.y, 500, 500)
+        image(pluto, center.x, center.y,500,500)
     }
     
     func touchStarted() {

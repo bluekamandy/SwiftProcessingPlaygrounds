@@ -6,6 +6,7 @@
 //:
 //: * [Conditional Logic](Conditional%20Logic)
 //: * [For and While Loops](For%20and%20While%20Loops)
+//: * [Synthesis—Loops and Rotate](Synthesis%E2%80%94Loops%20and%20Rotate)
 //:
 //: ## Collections and Manipulating Variables
 //:
@@ -13,6 +14,7 @@
 //:
 //: * [Arrays](Arrays)
 //: * [Map and Lerp](Map%20and%20Lerp)
+//: * [Synthesis—Loops, Curves, and Map](Synthesis%E2%80%94Loops,%20Curves,%20and%20Map)
 //:
 //: ## Interactivity
 //:

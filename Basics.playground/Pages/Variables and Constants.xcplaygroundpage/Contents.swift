@@ -43,7 +43,7 @@
  
  ### Scope
  
- When you declare a variable it is only available within its scope. What does scope mean? In Swift scope 
+ When you declare a variable it is only available within its scope. What does scope mean? In Swift and many other languages scope is whatever is betwen the `{` and `}`. If you declare a variable inside of braces, it's only available inside the braces. If you want to declare something in a *broader* scope, then move outside the current set of braces as long as you're still inside of the Sketch class.
  
  ## Data Types
  
@@ -53,7 +53,7 @@
  
  Booleans can either be `true` or `false`. They're the simplest data type and come in handy later on when we start testing whether things are true or false. They're also sometimes called **flags**. It's common practice to name booleans as if we're asking a quesiton.
  
- var hasStarted = true
+ `var hasStarted = true`
  
  ### Integers
  
@@ -85,7 +85,14 @@
  
  `var age: Int!`
  
- The ! indicates that the variable is an **Optional**. We'll go over this in more detail later, but it basically means there *may or may not be a value stored in this variable* and it's required in Swift if you want to separate declaring and inializing a variable.
+ The ! indicates that the variable is an **Optional**. We'll go over this in more detail later, but it basically means there *may or may not be a value stored in this variable* and it's required in Swift if you want to separate declaring and inializing a variable. It tells the compiler that it's OK if this is empty.
+ 
+ ## Capitalization
+ 
+ Capitalization will help you write clean code that others can understand and use. There are two types of capitalization that we'll use in programming:
+ 1. **Camel Casing**— when we create **variables** or **functions** don't capitalize the first letter. For example: `myVariable`, `drawRectangle`, or `createGradient`.
+ 1. **Pascal Casing**— This style is reserved for creating **classes** which we'll get into later. In this style we capitalize the first letter and all letters at the beginning of words. For example: `Firefly`, `SmileyFace`, or `SpaceShip`.
+ You haven't learned how to create functions or objects, but you'll be using a lot of them so be on the look out for these different styles of capitalization! You'll learn how to make your own functions and classes soon!
  
 ## Let's play with some variables!
  

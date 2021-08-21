@@ -23,7 +23,7 @@ SwiftProcessing comes with a built in slider class that enables quick and easy s
  * `height` - height of the slider
  * `value` - the current value of the slider
  
- The dot modifier works like this: when you declare an object,
+ The dot modifier works like this: when you declare an object, you have access to all of its properties. If you type a `.` at the end of your variable name you can access and modify any of these.
  
  ## Let's try out using sliders on a face! How many different faces can you make with these sliders?
  
@@ -39,14 +39,8 @@ class MySketch: Sketch, SketchDelegate {
     var mouthWidth = 200.0
     var mouthHeight = 50.0
     var toothSize = 10.0
-    
-    // When variables are created that aren't initialized with a value
-    // you have to tell Swift what data type it is. In this case we're
-    // saying that these variables are of type Slider with the : symbol.
-    // The ! tells Swift that it may be empty at run time and that it's
-    // OK. More on that soon. But we'll make sure to initialize the
-    // sliders in setup().
-    
+
+//:  When variables are created that aren't initialized with a value you have to tell Swift what data type it is. In this case we're saying that these variables are of type Slider with the : symbol. The ! tells Swift that it may be empty at run time and that it's OK. More on that soon. But we'll make sure to initialize the sliders in setup().
     // Declare sliders
     var eyeSizeSlider: Slider!
     var pupilSizeSlider: Slider!
@@ -64,7 +58,7 @@ class MySketch: Sketch, SketchDelegate {
         eyeSizeSlider.x = xOffset
         eyeSizeSlider.label.text("Eye Size")
         eyeSizeSlider.label.fontSize(14)
-        eyeSizeSlider.label.textAlignment(TextAlignment.center)
+        eyeSizeSlider.label.textAlignment(.center)
         eyeSizeSlider.label.textColor(255, 255, 255)
         xOffset += spacer
         
@@ -72,7 +66,7 @@ class MySketch: Sketch, SketchDelegate {
         pupilSizeSlider.x = xOffset
         pupilSizeSlider.label.text("Pupil Size")
         pupilSizeSlider.label.fontSize(14)
-        pupilSizeSlider.label.textAlignment(TextAlignment.center)
+        pupilSizeSlider.label.textAlignment(.center)
         pupilSizeSlider.label.textColor(255, 255, 255)
         
         xOffset += spacer
@@ -80,7 +74,7 @@ class MySketch: Sketch, SketchDelegate {
         mouthWidthSlider.x = xOffset
         mouthWidthSlider.label.text("Mouth Width")
         mouthWidthSlider.label.fontSize(14)
-        mouthWidthSlider.label.textAlignment(TextAlignment.center)
+        mouthWidthSlider.label.textAlignment(.center)
         mouthWidthSlider.label.textColor(255, 255, 255)
         
         xOffset += spacer
@@ -88,14 +82,14 @@ class MySketch: Sketch, SketchDelegate {
         mouthHeightSlider.x = xOffset
         mouthHeightSlider.label.text("Mouth Height")
         mouthHeightSlider.label.fontSize(14)
-        mouthHeightSlider.label.textAlignment(TextAlignment.center)
+        mouthHeightSlider.label.textAlignment(.center)
         mouthHeightSlider.label.textColor(255, 255, 255)
         
         xOffset += spacer
         toothSizeSlider = createSlider(0.0, 100.0, toothSize)
         toothSizeSlider.label.text("Tooth Size")
         toothSizeSlider.label.fontSize(14)
-        toothSizeSlider.label.textAlignment(TextAlignment.center)
+        toothSizeSlider.label.textAlignment(.center)
         toothSizeSlider.label.textColor(255, 255, 255)
         toothSizeSlider.x = xOffset
     }
@@ -119,7 +113,7 @@ class MySketch: Sketch, SketchDelegate {
         
         // Mouth
         fill(#colorLiteral(red: 0.7707275748, green: 0, blue: 0, alpha: 1))
-        arc(width/2, height/2 + 50.0, mouthWidthSlider.value(), mouthHeightSlider.value(), 0.0, -PI)
+        arc(width/2, height/2 + 50.0, mouthWidthSlider.value(), mouthHeightSlider.value(), 0.0, -Math.pi)
         
         // Tooth
         fill(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))

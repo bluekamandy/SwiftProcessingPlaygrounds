@@ -21,15 +21,13 @@
  
  ### Polygons
  
- Here is a simple example of creating a **polygon** that is **open** with 5 random points. You can place this in `setup()` or `draw()` with different results.
+ Here is a simple example of the pattern of creating a **polygon** that is **open** with 5 points (**Note:** you'd have to fill in the point values and the `...` means you'd need to follow the same pattern for all 5 points):
  
  ```
- noFill()
- stroke(255)
  beginShape()
- for _ in 0..<5 {
-     vertex(random(width), random(height))
- }
+ vertex(x1, y1)
+ ...
+ vertex(x5, y5)
  endShape()
  ```
  
@@ -38,103 +36,65 @@
  A similar **curve** can be created with the following code. This time let's **close** the shape.
  
  ```
- fill(255)
- stroke(255, 0 ,0)
  beginShape()
- for _ in 0..<5 {
-     curveVertex(random(width), random(height))
- }
+ curveVertex(x1, y1)
+ ...
+ curveVertex(x5, y5)
  endShape(.close)
  ```
  
  **Note**: The vertices of a curve are also called **control points.**
  
- ## Let's create a closed curve with control points that bounce around the screen.
+ ## Let's create a closed curve with red control points.
  */
 import SwiftProcessing
 import PlaygroundSupport
 import UIKit
 
-// Note: This sketch is being sped up by the use of parentheses around each statement.
-
 class MySketch: Sketch, SketchDelegate {
     
-    let numPoints = 25
-    var randomPoints = [CGPoint]()
+    var x1 = 50
+    var y1 = 50
     
-    var xSpeed = [CGFloat]()
-    var ySpeed = [CGFloat]()
+    var x2 = 300
+    var y2 = 400
     
-    var xDir = [CGFloat]()
-    var yDir = [CGFloat]()
+    var x3 = 700
+    var y3 = 300
     
-    // Curve function for quality
-    // or an enum.
+    var x4 = 400
+    var y4 = 900
     
     func setup() {
+        background(0)
         
-        // Call the function that generates random points (see bottom).
-        (randomPoints = randomPoints(numPoints))
+        noFill()
+        stroke(255)
         
-        // Generate random speeds and directions
-        for _ in 0..<numPoints {
-            (xSpeed.append(random(1.0)))
-            (ySpeed.append(random(1.0)))
-            
-            (xDir.append(random(-1.0, 1.0) > 0 ? 1.0 : -1.0))
-            (yDir.append(random(-1.0, 1.0) > 0 ? 1.0 : -1.0))
-        }
+        // Draw curves using random points.
+        beginShape()
+        curveVertex(x1, y1)
+        curveVertex(x2, y2)
+        curveVertex(x3, y3)
+        curveVertex(x4, y4)
+        endShape(.close)
         
-        (colorMode(.hsb))
+        // Draw control points as red circles.
+        fill(255, 0, 0)
+        noStroke()
+        
+        circle(x1, y1, 15)
+        circle(x2, y2, 15)
+        circle(x3, y3, 15)
+        circle(x4, y4, 15)
     }
     
     func draw() {
-        (background(0))
-
-        (noFill())
-        (stroke(255))
-
-        // Draw curves using random points.
-        (beginShape())
-        for p in randomPoints {
-            (curveVertex(p.x, p.y))
-        }
-        (endShape(.close))
         
-        // Draw control points as red circles.
-        (fill(255, 0, 0))
-        (noStroke())
-        for p in randomPoints {
-            (fill((map(p.y, 0, height, 0, 360)), 100, 100, 100))
-//            (fill(360, 100, 100))
-            (circle(p.x, p.y, 15))
-        }
-
-        // Move the points according to speed and direction until they hit an edge and then reverse.
-        for i in 0..<randomPoints.count {
-            (randomPoints[i].x += (xSpeed[i] * xDir[i]))
-            (randomPoints[i].y += (ySpeed[i] * yDir[i]))
-            if randomPoints[i].x < 0 || randomPoints[i].x > CGFloat(width) {
-                (xDir[i] *= -1)
-            }
-            
-            if randomPoints[i].y < 0 || randomPoints[i].y > CGFloat(height) {
-                (yDir[i] *= -1)
-            }
-        }
-    }
-    
-    // A custom function that returns an array of random points. We'll learn to write our own functions in a future playground!
-    func randomPoints(_ number: Int) -> [CGPoint] {
-        var points = [CGPoint]()
         
-        for _ in 0..<number {
-            (points.append(CGPoint(x: random(width), y: random(height))))
-        }
-        return points
     }
 }
-//: ## Can you change this playground to draw a polygon instead of a curve? How else can you customize this sketch?
+//: ## Can you change this playground to draw a polygon instead of a curve? Can you use curves to draw something? Here's a hint: You can use an image editing program to plan out curves using images!
 PlaygroundPage.current.needsIndefiniteExecution = true
 PlaygroundPage.current.setLiveView(MySketch())
 //: [Next](@next)
